@@ -1,0 +1,85 @@
+
+<!-- Sidebar start -->
+
+<div class="sidebar" data-color="white" data-active-color="danger">
+    <div class="logo">
+        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+            <div class="logo-image-small">
+                <img src="../../../../assets/new/img/logo-small.png">
+            </div>
+            <!-- <p>CT</p> -->
+        </a>
+        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+            Your Logo
+            <!-- <div class="logo-image-big">
+          <img src="../assets/img/logo-big.png">
+        </div> -->
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="active ">
+                <a routerLink="/home-page/workspace">
+                    <i class="nc-icon nc-bank"></i>
+                    <p>WORKSPACE</p>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/home-page/manage-project">
+                    <i class="nc-icon nc-diamond"></i>
+                    <p>MANAGE PROJECTS</p>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/home-page/new-project">
+                    <i class="nc-icon nc-pin-3"></i>
+                    <p>NEW PROJECT</p>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/home-page/extract">
+                    <i class="nc-icon nc-bell-55"></i>
+                    <p>EXTRACT</p>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/home-page/configure">
+                    <i class="nc-icon nc-tile-56"></i>
+                    <p>CONFIGURE</p>
+                </a>
+            </li>
+            <li>
+                <a >
+                    <i class="nc-icon nc-single-02"></i>
+                    <p (click)="toggle()">ADMIN</p>
+                    <ul>
+                        <a routerLink="/home-page/admin/user-management">
+                            <li class="hidden" *ngIf ="hidden" >USER MANAGEMENT</li>
+                        </a>
+                        <a routerLink="/home-page/admin/instance-management">
+                            <li class="hidden" *ngIf ="hidden">INSTANCE MANAGEMENT</li>
+                        </a>
+                        <a routerLink="/home-page/admin/billing">
+                            <li class="hidden" *ngIf ="hidden">BILLING</li>
+                        </a>
+                        <a routerLink="/home-page/admin/capacity">
+                            <li class="hidden" *ngIf ="hidden">CAPACITY</li>
+                        </a>
+                    </ul>
+                       
+                    <!-- <a href="#" (click)="toggle()">{{showMore}}</a> -->
+                    
+                </a>
+            </li>
+           
+            <li class="active-pro">
+                <a>
+                  <i class="nc-icon nc-button-power"></i>
+                  <p>Logout</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Sidebar end -->
