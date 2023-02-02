@@ -30,23 +30,8 @@ export class AuthComponent implements OnInit {
 		}
 
 		this.authService.login(loginForm.value.email, loginForm.value.password);
+		// this.authService.getAuth();
 
-		// this.authService.login(loginForm.value.email, loginForm.value.password).subscribe((result: any) => {
-
-		// 	if (result) {
-		// 		this.isSellerLoggedIn.next(true);
-
-		// 		localStorage.setItem('userDetails', JSON.stringify(result.content.dataList[0].userDetails));
-		// 		localStorage.setItem('token', JSON.stringify(result.content.dataList[0].token));
-
-		// 		this.router.navigate(['/home-page/workspace']);
-
-
-		// 	} else{
-		// 	 	this.showError = 'Invalid Credentials';
-		// 	 	console.log('*Invalid user*');
-		// 	}
-		// });
 	}
 
 }
