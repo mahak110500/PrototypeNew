@@ -55,6 +55,27 @@ export class ProjectsService{
 
 	}
 
+	UpdateData(formData){
+		this.profileForm = formData;
+
+		this.newProjectData = JSON.parse(localStorage.getItem('newProjectData'));
+		let customerId = this.newProjectData.customer_insertId;
+		let projectId = this.newProjectData.project_insertId;
+
+
+
+		let auth_token = JSON.parse(localStorage.getItem('token'));
+		const headers = new HttpHeaders({
+			'Content-Type': 'application/json',
+			'Authorization': `${auth_token}`
+		});
+		const options = { headers: headers }
+
+		return this.http.put<UserData>(`http://103.127.29.85:3000/api/admin/update-customer-project/`+customerId+`/project/`+projectId, formData, options)
+
+
+	}
+
 	getUserData() {
 		this.newProjectData = JSON.parse(localStorage.getItem('newProjectData'));
 
@@ -76,26 +97,7 @@ export class ProjectsService{
 		)
 	}
 
-	UpdateData(formData){
-		this.profileForm = formData;
-
-		this.newProjectData = JSON.parse(localStorage.getItem('newProjectData'));
-		let customerId = this.newProjectData.customer_insertId;
-		let projectId = this.newProjectData.project_insertId;
-
-
-
-		let auth_token = JSON.parse(localStorage.getItem('token'));
-		const headers = new HttpHeaders({
-			'Content-Type': 'application/json',
-			'Authorization': `${auth_token}`
-		});
-		const options = { headers: headers }
-
-		return this.http.put<UserData>(`http://103.127.29.85:3000/api/admin/update-customer-project/`+customerId+`/project/`+projectId, formData, options)
-
-
-	}
+	
 
 	uploadFile(files:any) {
 
