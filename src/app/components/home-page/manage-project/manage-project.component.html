@@ -14,8 +14,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<!-- Loader div starts -->
-						<div class="spinner-border text-dark" style="width: 3rem; height: 3rem; margin-left: 450px; margin-top: 200px;"
-							role="status" *ngIf="loader">
+						<div class="spinner-border text-dark"
+							style="width: 3rem; height: 3rem; margin-left: 450px; margin-top: 200px;" role="status"
+							*ngIf="loader">
 							<span class="visually-hidden">Loading..</span>
 						</div>
 						<!-- Loader div ends -->
@@ -27,9 +28,6 @@
 								<div class="table-responsive">
 									<table class="table">
 										<thead class=" text-primary">
-											<th>
-												Id
-											</th>
 											<th>
 												Customer
 											</th>
@@ -46,9 +44,6 @@
 										<tbody>
 											<tr
 												*ngFor="let data of dataList | paginate: {itemsPerPage:10, currentPage:p}">
-												<td>
-													{{data.id}}
-												</td>
 												<td>
 													{{data.first_name}} {{data.last_name}}
 												</td>

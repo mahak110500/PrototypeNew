@@ -8,7 +8,7 @@
         <div class="signup">
             <h1>Login Now</h1>
             <div *ngIf="showError" style="color: red;">
-                <p>{{showError}}</p>
+                <p>*Invalid Credentials*</p>
             </div>
 
             <form class="common-form" #loginForm="ngForm" (ngSubmit)="onlogin(loginForm)">
@@ -23,7 +23,7 @@
 
                 <div>
                     <input class="form-input" type="password" placeholder="Enter Password" ngModel name="password"
-                        required minlength="6" #password="ngModel" />
+                        required minlength="6" #password="ngModel" autocomplete="on" />
                     <div class="help-text" *ngIf="password.touched && !password.valid">
                         <div *ngIf="password.errors.required">Password is required</div>
                         <div *ngIf="password.errors.minlength">

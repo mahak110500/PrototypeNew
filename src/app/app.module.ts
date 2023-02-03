@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,6 +23,10 @@ import { InstanceManagementComponent } from './components/home-page/admin/instan
 import { BillingComponent } from './components/home-page/admin/billing/billing.component';
 import { CapacityComponent } from './components/home-page/admin/capacity/capacity.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ProgressComponent } from './components/home-page/new-project/progress/progress.component';
 
 
 
@@ -43,14 +48,19 @@ import {NgxPaginationModule} from 'ngx-pagination';
     InstanceManagementComponent,
     BillingComponent,
     CapacityComponent,
+    ProgressComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule
 
   ],
   providers: [],

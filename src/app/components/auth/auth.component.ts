@@ -11,11 +11,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AuthComponent implements OnInit {
 	formData: any;
-	showError: string = null;
+	showError: boolean = false; //to display error
 
 	//for authguard
-	isSellerLoggedIn = new BehaviorSubject<boolean>(false);
-
+	isLoggedIn = new BehaviorSubject<boolean>(false);
 
 
 	constructor(private authService: AuthService, private router: Router) { }
@@ -29,8 +28,22 @@ export class AuthComponent implements OnInit {
 			return;
 		}
 
-		this.authService.login(loginForm.value.email, loginForm.value.password);
-		// this.authService.getAuth();
+		this.authService.login(loginForm.value.email, loginForm.value.password).subscribe(result => {
+			console.log(result);
+
+			if (result && result.content.dataList[0]) {
+				this.isLoggedIn.next(true);
+
+				localStorage.setItem('userDetails', JSON.stringify(result.content.dataList[0].userDetails));
+				localStorage.setItem('token', JSON.stringify(result.content.dataList[0].token));
+
+				this.router.navigate(['/home-page/workspace']);
+			} else{
+				this.showError = true;
+		   }
+		});
+		
+		
 
 	}
 

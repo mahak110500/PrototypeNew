@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 
 export interface Authdata {
 	content: any;
@@ -14,29 +15,18 @@ export interface Authdata {
 	providedIn: 'root'
 })
 export class AuthService {
-	isLoggedIn = new BehaviorSubject<boolean>(false);
 
+	baseUrl = environment.baseUrl;
 
 	constructor(private http: HttpClient, private router: Router) { }
 
 	login(username: string, password: string) {
 		return this.http.post<Authdata>(`http://103.127.29.85:3000/api/admin/login`,
 			{ username, password }
-		).subscribe(result => {
-			console.log(result);
-
-			if (result && result.content.dataList[0]) {
-				this.isLoggedIn.next(true);
-
-				localStorage.setItem('userDetails', JSON.stringify(result.content.dataList[0].userDetails));
-				localStorage.setItem('token', JSON.stringify(result.content.dataList[0].token));
-
-				this.router.navigate(['/home-page/workspace']);
-			}
-		})
+		)
 	}
 
-	logout(){
+	logout() {
 		localStorage.removeItem('userDetails');
 		localStorage.removeItem('token');
 		localStorage.removeItem('newProjectData');
@@ -44,10 +34,10 @@ export class AuthService {
 	}
 
 	//for authguard
-	getAuth(){
-		if(localStorage.getItem('token')){
+	getAuth() {
+		if (localStorage.getItem('token')) {
 			return true;
-		} else{
+		} else {
 			return false
 		}
 	}

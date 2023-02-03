@@ -10,27 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
 	styleUrls: ['./forget-password.component.css']
 })
 export class ForgetPasswordComponent implements OnInit {
-	isSellerLoggedIn = new BehaviorSubject<boolean>(false);
-
-	showError: boolean = false;
-
-
+	
 	constructor(private authService: AuthService, private router: Router) { }
 
 	ngOnInit(): void {
 	}
 
-
-	onFormSubmit(loginForm: NgForm) {
-
-		if (!loginForm.valid) {
-			return;
-		}
-
-		this.authService.login(loginForm.value.email, loginForm.value.password);
-
-
-
-	}
 
 }
