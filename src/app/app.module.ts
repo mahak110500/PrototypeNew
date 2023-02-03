@@ -17,6 +17,12 @@ import { ConfigureComponent } from './components/home-page/configure/configure.c
 import { ExtractComponent } from './components/home-page/extract/extract.component';
 import { SidebarComponent } from './components/home-page/sidebar/sidebar.component';
 import { ComponentsComponent } from './components/components.component';
+import { UserManagementComponent } from './components/home-page/admin/user-management/user-management.component';
+import { InstanceManagementComponent } from './components/home-page/admin/instance-management/instance-management.component';
+import { BillingComponent } from './components/home-page/admin/billing/billing.component';
+import { CapacityComponent } from './components/home-page/admin/capacity/capacity.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -32,13 +38,18 @@ import { ComponentsComponent } from './components/components.component';
     ExtractComponent,
     SidebarComponent,
     ComponentsComponent,
+    UserManagementComponent,
+    InstanceManagementComponent,
+    BillingComponent,
+    CapacityComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
 
   ],
   providers: [],

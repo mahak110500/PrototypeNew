@@ -13,7 +13,12 @@ export class LoggedinAuthGuard implements CanActivate {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-
+			if (this.authService.getAuth()) {
+				this.router.navigate(['/home-page/workspace'])
+				return false
+			} else {
+				return true
+			}
 			// if (this.authService.isLoggedIn) {
 			// 	console.log(this.authService.isLoggedIn);
 				
@@ -22,11 +27,11 @@ export class LoggedinAuthGuard implements CanActivate {
 			// } else {
 			// 	return true
 			// }
-		if (localStorage.getItem('userDetails')) {
-			return false;
-		}
-		this.router.navigate(['/home-page/workspace']);
-		return true;
+		// if (localStorage.getItem('userDetails')) {
+		// 	return false;
+		// }
+		// this.router.navigate(['/home-page/workspace']);
+		// return true;
 	}
 }
 

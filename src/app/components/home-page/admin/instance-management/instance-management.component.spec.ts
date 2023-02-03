@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExtractComponent } from './extract.component';
+import { InstanceManagementComponent } from './instance-management.component';
 
-describe('ExtractComponent', () => {
-  let component: ExtractComponent;
-  let fixture: ComponentFixture<ExtractComponent>;
+describe('InstanceManagementComponent', () => {
+  let component: InstanceManagementComponent;
+  let fixture: ComponentFixture<InstanceManagementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExtractComponent ]
+      declarations: [ InstanceManagementComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExtractComponent);
+    fixture = TestBed.createComponent(InstanceManagementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -36,20 +36,19 @@ export class AuthService {
 		})
 	}
 
+	logout(){
+		localStorage.removeItem('userDetails');
+		localStorage.removeItem('token');
+		localStorage.removeItem('newProjectData');
+		this.router.navigate(['auth']);
+	}
+
 	getAuth(){
+		if(localStorage.getItem('token')){
 
-		// console.log(!!this.isLoggedIn);
-
-		// if(JSON.parse(localStorage.getItem('token'))){
-		// 	return !!this.isLoggedIn
-		// }
-		
-		
-		// if(!!this.isLoggedIn){
-		// 	// console.log(!!this.isLoggedIn);
-			
-		// 	console.log('successful');
-			
-		// }
+			return true;
+		} else{
+			return false
+		}
 	}
 }

@@ -5,6 +5,10 @@ import { AuthComponent } from './components/auth/auth.component';
 import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
 import { LoggedinAuthGuard } from './components/auth/loggedin-auth.guard';
 import { AdminComponent } from './components/home-page/admin/admin.component';
+import { BillingComponent } from './components/home-page/admin/billing/billing.component';
+import { CapacityComponent } from './components/home-page/admin/capacity/capacity.component';
+import { InstanceManagementComponent } from './components/home-page/admin/instance-management/instance-management.component';
+import { UserManagementComponent } from './components/home-page/admin/user-management/user-management.component';
 import { ConfigureComponent } from './components/home-page/configure/configure.component';
 import { ExtractComponent } from './components/home-page/extract/extract.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -58,6 +62,33 @@ const routes: Routes = [
 			{
 				path: 'admin',
 				component: AdminComponent,
+				children: [
+					{
+						path: 'user-management',
+						component: UserManagementComponent
+		
+		
+					},
+					{
+						path: 'instance-management',
+						component: InstanceManagementComponent
+		
+		
+					},
+					{
+						path: 'billing',
+						component: BillingComponent
+		
+		
+					},
+					{
+						path: 'capacity',
+						component: CapacityComponent
+		
+		
+					},
+				]
+				
 			},
 
 		]
