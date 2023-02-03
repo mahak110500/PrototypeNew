@@ -43,9 +43,9 @@ export class AuthService {
 		this.router.navigate(['auth']);
 	}
 
+	//for authguard
 	getAuth(){
 		if(localStorage.getItem('token')){
-
 			return true;
 		} else{
 			return false

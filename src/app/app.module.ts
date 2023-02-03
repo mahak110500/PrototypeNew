@@ -24,6 +24,7 @@ import { CapacityComponent } from './components/home-page/admin/capacity/capacit
 import {NgxPaginationModule} from 'ngx-pagination';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -28,6 +28,9 @@
 									<table class="table">
 										<thead class=" text-primary">
 											<th>
+												Id
+											</th>
+											<th>
 												Customer
 											</th>
 											<th>
@@ -43,6 +46,9 @@
 										<tbody>
 											<tr
 												*ngFor="let data of dataList | paginate: {itemsPerPage:10, currentPage:p}">
+												<td>
+													{{data.id}}
+												</td>
 												<td>
 													{{data.first_name}} {{data.last_name}}
 												</td>
