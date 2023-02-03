@@ -53,13 +53,13 @@ export class NewProjectComponent implements OnInit {
 		this.profileForm = profileForm.value;
 
 
-		this.newData = JSON.parse(localStorage.getItem('newProjectData')) ;
-		
-		
+		this.newData = JSON.parse(localStorage.getItem('newProjectData'));
+
+
 		if (this.newData != null) {
 			this.onUpdate(this.profileForm);
-			
-		}else{
+
+		} else {
 			this.projectsService.postUserData(this.profileForm).subscribe((res: any) => {
 				// console.log(res.content.dataList[0]);
 				localStorage.setItem('newProjectData', JSON.stringify(res.content.dataList[0]));
@@ -123,12 +123,12 @@ export class NewProjectComponent implements OnInit {
 		// window.alert('Are you sure you want to delete?')
 
 		var result = confirm("Are you sure you want to delete?");
-		if (result) {      
+		if (result) {
 			this.files.splice(index, 1);
 
 			alert('Deleted');
 		} else {
-		  alert('Not deleted');
+			alert('Not deleted');
 		}
 	}
 
@@ -166,9 +166,9 @@ export class NewProjectComponent implements OnInit {
 
 		this.projectsService.uploadFile(files).subscribe(res => {
 			console.log(res);
-			
+
 		})
-		
+
 	}
 
 	/**
@@ -197,7 +197,7 @@ export class NewProjectComponent implements OnInit {
 	}
 
 	onUpdate(profileFormGroup) {
-		
+
 		let newProjectData = JSON.parse(localStorage.getItem('newProjectData'));
 
 		if (newProjectData != null) {

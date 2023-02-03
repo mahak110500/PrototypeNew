@@ -21,7 +21,7 @@ export class AuthService {
 	constructor(private http: HttpClient, private router: Router) { }
 
 	login(username: string, password: string) {
-		return this.http.post<Authdata>(`http://103.127.29.85:3000/api/admin/login`,
+		return this.http.post<Authdata>(this.baseUrl+`login`,
 			{ username, password }
 		)
 	}

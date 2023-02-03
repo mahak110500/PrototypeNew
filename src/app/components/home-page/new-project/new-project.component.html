@@ -275,8 +275,8 @@
                                                     file</label>
                                             </div>
                                         </form><br><br>
-                                        <div
-                                            *ngIf="imgFormGroup.get('imgInput').invalid && imgFormGroup.get('imgInput').touched" style="text-align: center; font-size: 15px;">
+                                        <div *ngIf="imgFormGroup.get('imgInput').invalid && imgFormGroup.get('imgInput').touched"
+                                            style="text-align: center; font-size: 15px;">
                                             <span *ngIf="imgFormGroup.get('imgInput').errors?.required"
                                                 style="color: red;">**Please select the
                                                 Image</span>
