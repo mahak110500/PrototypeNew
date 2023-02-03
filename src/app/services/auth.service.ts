@@ -38,11 +38,11 @@ export class AuthService {
 
 	getAuth(){
 
-		console.log(!!this.isLoggedIn);
+		// console.log(!!this.isLoggedIn);
 
-		if(JSON.parse(localStorage.getItem('token'))){
-			return !!this.isLoggedIn
-		}
+		// if(JSON.parse(localStorage.getItem('token'))){
+		// 	return !!this.isLoggedIn
+		// }
 		
 		
 		// if(!!this.isLoggedIn){

@@ -6,16 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { AuthComponent } from './pages/auth/auth.component';
-import { ForgetPasswordComponent } from './pages/auth/forget-password/forget-password.component';
-import { WorkspaceComponent } from './pages/home-page/workspace/workspace.component';
-import { NewProjectComponent } from './pages/home-page/new-project/new-project.component';
-import { ManageProjectComponent } from './pages/home-page/manage-project/manage-project.component';
-import { AdminComponent } from './pages/home-page/admin/admin.component';
-import { ConfigureComponent } from './pages/home-page/configure/configure.component';
-import { ExtractComponent } from './pages/home-page/extract/extract.component';
-import { SidebarComponent } from './pages/home-page/sidebar/sidebar.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
+import { WorkspaceComponent } from './components/home-page/workspace/workspace.component';
+import { NewProjectComponent } from './components/home-page/new-project/new-project.component';
+import { ManageProjectComponent } from './components/home-page/manage-project/manage-project.component';
+import { AdminComponent } from './components/home-page/admin/admin.component';
+import { ConfigureComponent } from './components/home-page/configure/configure.component';
+import { ExtractComponent } from './components/home-page/extract/extract.component';
+import { SidebarComponent } from './components/home-page/sidebar/sidebar.component';
+import { ComponentsComponent } from './components/components.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SidebarComponent } from './pages/home-page/sidebar/sidebar.component';
     ConfigureComponent,
     ExtractComponent,
     SidebarComponent,
+    ComponentsComponent,
   ],
   imports: [
     BrowserModule,

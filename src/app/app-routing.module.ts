@@ -1,68 +1,58 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardGuard } from './pages/auth/auth-guard.guard';
-import { AuthComponent } from './pages/auth/auth.component';
-import { ForgetPasswordComponent } from './pages/auth/forget-password/forget-password.component';
-import { AdminComponent } from './pages/home-page/admin/admin.component';
-import { ConfigureComponent } from './pages/home-page/configure/configure.component';
-import { ExtractComponent } from './pages/home-page/extract/extract.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { ManageProjectComponent } from './pages/home-page/manage-project/manage-project.component';
-import { NewProjectComponent } from './pages/home-page/new-project/new-project.component';
-import { WorkspaceComponent } from './pages/home-page/workspace/workspace.component';
+import { AuthGuardGuard } from './components/auth/auth-guard.guard';
+import { AuthComponent } from './components/auth/auth.component';
+import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
+import { LoggedinAuthGuard } from './components/auth/loggedin-auth.guard';
+import { AdminComponent } from './components/home-page/admin/admin.component';
+import { ConfigureComponent } from './components/home-page/configure/configure.component';
+import { ExtractComponent } from './components/home-page/extract/extract.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { ManageProjectComponent } from './components/home-page/manage-project/manage-project.component';
+import { NewProjectComponent } from './components/home-page/new-project/new-project.component';
+import { WorkspaceComponent } from './components/home-page/workspace/workspace.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+	{ path: '', redirectTo: '/home-page', pathMatch: 'full' },
 	{
 		path: 'auth',
 		component: AuthComponent,
-		canActivate:  [AuthGuardGuard],
+		canActivate: [LoggedinAuthGuard],
 	},
-  {
-    path: 'home-page',
-    component: HomePageComponent,
-
-  },
-  {
+	{
 		path: 'forget-password',
 		component: ForgetPasswordComponent,
 
 	},
-  {
+	{
 		path: 'home-page',
 		component: HomePageComponent,
-		canActivate:  [AuthGuardGuard],
+		canActivate: [AuthGuardGuard],
 		children: [
 			{
 				path: 'workspace',
 				component: WorkspaceComponent
-
 
 			},
 			{
 				path: 'manage-project',
 				component: ManageProjectComponent
 
-
-
 			},
 			{
 				path: 'new-project',
 				component: NewProjectComponent
-
 
 			},
 			{
 				path: 'extract',
 				component: ExtractComponent
 
-
 			},
 			{
 				path: 'configure',
 				component: ConfigureComponent
-
 
 			},
 			{
@@ -76,7 +66,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

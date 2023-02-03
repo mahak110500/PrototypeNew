@@ -14,20 +14,17 @@ export class AuthGuardGuard implements CanActivate {
 		state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 		
-		if (this.router.url == '/auth') {
-			this.authService.getAuth();
-			console.log(!!this.authService.isLoggedIn);
-			// this.router.navigate(['/home-page/workspace']);
-		}
+		// if (this.router.url == '/auth') {
+		// 	this.authService.getAuth();
+		// 	console.log(!!this.authService.isLoggedIn);
+		// 	// this.router.navigate(['/home-page/workspace']);
+		// }
 
 		if(localStorage.getItem('userDetails')){
 			return true;
 		}
 		this.router.navigate(['/auth']);
 		return false;
-       
-		// return this.authService.isLoggedIn;
-
 
 	}
 
